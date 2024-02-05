@@ -1,0 +1,44 @@
+you can either use mysql workbench or xampp as database
+-> modify your corresponding username,password,databasename.
+
+-> create table queries in mysql is given below
+
+create database vehicle_rental_system;
+use vehicle_rental_system;
+
+CREATE TABLE Users (
+    name VARCHAR(55) NOT NULL,
+    email VARCHAR(55) NOT NULL UNIQUE,
+    password VARCHAR(35) NOT NULL,
+    role VARCHAR(15) NOT NULL
+);
+
+CREATE TABLE BORROWER (
+    b_email VARCHAR(55) NOT NULL,
+    cartList VARCHAR(55), -- Assuming cartList is a string, adjust the data type as needed
+    type varchar(20),
+    initial_deposit DECIMAL(10, 2) NOT NULL
+);
+
+CREATE TABLE RENTED_REPORT (
+    renterId varchar(55),
+    numberPlate VARCHAR(29) NOT NULL,
+    km_used double,
+    damagelvl int
+);
+
+CREATE TABLE RENTAL_SERVICE (
+    user_id varchar(50),
+    numberPlate VARCHAR(20) NOT NULL,
+    date DATE NOT NULL,
+    isRented BOOLEAN NOT NULL,
+    isServiced BOOLEAN NOT NULL
+   
+);
+CREATE TABLE VEHICLES (
+    name VARCHAR(55) NOT NULL,
+    numberPlate VARCHAR(29) NOT NULL,
+    availableCount INT NOT NULL,
+    type VARCHAR(50) NOT NULL
+
+);
